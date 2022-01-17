@@ -7,7 +7,6 @@ export async function activate(context: ExtensionContext): Promise<void> {
   }
   const cmd = config.get<string>('server.command', 'gunkls');
   const args = config.get<string[]>('server.args', []);
-  await window.showPrompt(JSON.stringify({cmd, args}))
 
   const client = new LanguageClient(
     'coc-gunk',
